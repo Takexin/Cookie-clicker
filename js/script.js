@@ -4,12 +4,19 @@ var clicker_value = 5
 function cookie_click(){
     cookie +=1
     document.getElementById("cookie").innerHTML = cookie
+    document.getElementById("cookie_img").setAttribute("width", "480px")
+    setTimeout(() => {
+        document.getElementById("cookie_img").setAttribute("width", "");
+      }, "100");
 
 }
 function oneSecondTimer() {
     if (cookie >= clicker_value){
         clickers +=1
-        document.getElementById("clicker").innerHTML = clickers
+        cookie -= clicker_value
+        clicker_value += Math.round(clickers*0.5)
+        document.getElementById("clicker_botao").setAttribute("value", clicker_value + " - clicker " + clickers)
+        
         // Set the initial time to 0
         let startTime = Date.now();
     
@@ -35,5 +42,30 @@ function oneSecondTimer() {
     }
     
   }
-  
-  // Call the function to start the timer
+// Call the function to start the timer
+
+function handler(e) {
+    e = e || window.event;
+
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+
+    // IE 8
+    if (pageX === undefined) {
+        pageX = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+        pageY = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    }
+
+    console.log(pageX, pageY);
+    placeDiv(pageX - 100, pageY - 100)
+}
+
+// attach handler to the click event of the document
+if (document.attachEvent) document.attachEvent('onclick', handler);
+else document.addEventListener('click', handler);
+function placeDiv(x_pos, y_pos) {
+    var d = document.createElement("img").setAttribute("src", "img/Baking_delicious_chocolate_chip_cookies_top_view_-1-removebg-preview.png");
+    d.style.position = "absolute";
+    d.style.left = x_pos+'px';
+    d.style.top = y_pos+'px';
+  }

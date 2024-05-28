@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie clicker</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
     <h1>cookie clicker</h1>
     <h2 id="cookie">0</h2>
     <div class="game-flex">
-        <img src="img/Baking_delicious_chocolate_chip_cookies_top_view_-1-removebg-preview.png" alt="Cookie" onclick="cookie_click()">
-        <input type="button" value="clicker" onclick="oneSecondTimer()">
-        <div onclick="oneSecondTimer()" class="botao" id="clicker"></div>
+        <img src="img/Baking_delicious_chocolate_chip_cookies_top_view_-1-removebg-preview.png" alt="Cookie" onclick="cookie_click()" id="cookie_img">
+        <input type="button" value="5 - clicker" onclick="oneSecondTimer()" id="clicker_botao">
+        
     </div>
+    <img id="bola" src="img/the-first-guardian-explosion-the-first-guardian.gif" style="position: absolute; top: 40px; left: 50px;">
     
-    <script type="text/javascript" src="js/script.js"></script>
+    
 </body>
 </html>
