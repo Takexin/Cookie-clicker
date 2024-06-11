@@ -6,6 +6,7 @@ function cookie_update(){
     document.getElementById("cookie").innerHTML = cookie
 }
 function cookie_click(){
+    console.log("cookie clicado")
     cookie +=1
     cookie_update()
     document.getElementById("cookie_img").setAttribute("width", "480px")
@@ -54,5 +55,6 @@ function clicker(){
         cookie++
         cookie_update()
         clicker()
+        console.log("+1 cookie")
     }, 1000)
 }
