@@ -4,6 +4,7 @@ var clicker_value = 5
 
 function cookie_update(){
     document.getElementById("cookie").innerHTML = cookie
+    
 }
 function cookie_click(){
     console.log("cookie clicado")
